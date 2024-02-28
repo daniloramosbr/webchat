@@ -1,0 +1,94 @@
+.nav {
+  background-color: #000000;
+  position: fixed;
+  width: 30%;
+  height: 100%;
+  z-index: 9;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  transition: all 0.3s;
+  flex-direction: column;
+  gap: 20px;
+  overflow: hidden;
+}
+.exit-nav {
+  display: flex;
+  gap: 10px;
+  text-align: center;
+  background-color: rgb(44, 71, 103);
+  height: 4rem;
+  padding-left: 15px;
+}
+.exit-nav button {
+  height: 100%;
+  background-color: rgb(44, 71, 103);
+  border: 0;
+  color: rgb(255, 255, 255);
+}
+.exit-nav div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nav h3 {
+  text-align: center;
+  padding-top: 10px;
+}
+.users {
+  overflow-y: scroll;
+  height: 89vh;
+}
+/* Handle on hover */
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(75, 75, 75);
+  border-radius: 10px;
+}
+.cont-users {
+  display: flex;
+  padding-left: 15px;
+  gap: 10px;
+  margin-top: 15px;
+  border-bottom: 2px solid rgb(56, 71, 88);
+  cursor: pointer;
+}
+.cont-users div {
+  background-color: rgb(50, 64, 79);
+  border-radius: 5px;
+  height: 3rem;
+  width: 3rem;
+  display: flex;
+  align-items: center;
+}
+.cont-users div ion-icon {
+  width: 100%;
+}
+.cont-users h2 {
+  display: flex;
+  align-items: center;
+}
+.dev {
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  justify-content: center;
+  text-align: center;
+  color: rgb(8, 85, 179);
+}
+.creator .dev {
+}
+.user .dev {
+  display: none;
+}
