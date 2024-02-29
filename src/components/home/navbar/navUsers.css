@@ -61,11 +61,17 @@
   padding-left: 15px;
   gap: 10px;
   margin-top: 15px;
-  border-bottom: 2px solid rgb(56, 71, 88);
+  border-top: 2px solid rgb(43, 53, 92);
+  border-bottom: 2px solid rgb(43, 53, 92);
+  padding: 8px;
   cursor: pointer;
+  background-color: rgb(0, 0, 0);
+}
+.cont-users:hover {
+  background-color:  rgba(58, 87, 190, 0.329);
 }
 .cont-users div {
-  background-color: rgb(50, 64, 79);
+ background-color: rgb(49, 61, 106);
   border-radius: 5px;
   height: 3rem;
   width: 3rem;
@@ -86,8 +92,6 @@
   justify-content: center;
   text-align: center;
   color: rgb(8, 85, 179);
-}
-.creator .dev {
 }
 .user .dev {
   display: none;

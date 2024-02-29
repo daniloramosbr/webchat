@@ -8,6 +8,8 @@ import { jwtDecode } from "jwt-decode";
 export default function SignUp() {
   const [error, setError] = useState(false);
 
+  const [loading ,setLoading] = useState(false)
+
   const navigate = useNavigate();
 
   const [dataForm, setDataForm] = useState({
@@ -36,6 +38,8 @@ export default function SignUp() {
 
       return
     }
+
+    setLoading(true)
 
     try {
       const res = await Api.PostDados(
@@ -96,6 +100,8 @@ navigate('/webchat/signin')
               <h3>POR FAVOR, PREENCHA TODOS OS CAMPOS.</h3>
             </div>
           )}
+
+          {loading && (<div className="load"><div class="custom-loader"></div></div>)}
 
           <div className="button-go">
             <button onClick={CreateUser}>CRIAR CONTA</button>
