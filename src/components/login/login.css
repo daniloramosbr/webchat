@@ -51,3 +51,7 @@ form div input {
 .msg-error {
   color: red;
 }
+.load {
+  display: flex;
+  justify-content: center;
+}

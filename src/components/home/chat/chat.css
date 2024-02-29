@@ -2,6 +2,7 @@
   display: flex;
   justify-content: space-between;
   padding: 10px 30px 10px 30px;
+  background-color: rgb(49, 61, 106);
 }
 .header-chat h3 {
   display: flex;
@@ -22,7 +23,7 @@
   height: 2.7rem;
   border: 0;
   border-radius: 4px;
-  background-color: rgb(44, 71, 103);
+  background-color: rgb(49, 61, 106);
   color: aliceblue;
   margin-right: 10px;
   padding-left: 10px;
@@ -32,10 +33,11 @@
 .send-chat {
   display: flex;
   padding: 5px;
+  background-color: rgb(49, 61, 106);
 }
 .send-chat button {
   height: 2.7rem;
-  background-color: rgb(44, 71, 103);
+  background-color: rgb(49, 61, 106);
   color: aliceblue;
   border: 1px solid rgb(189, 189, 189);
   display: flex;
@@ -44,7 +46,7 @@
   border-radius: 50px;
 }
 .navchat {
-  background-color: rgb(44, 71, 103);
+  background-color: rgb(49, 61, 106);
   position: absolute;
   width: 100%;
   max-width: 20%;
@@ -64,7 +66,7 @@
   margin-left: 10px;
   margin-right: 10px;
   border-radius: 5px;
-  background-color: rgb(46, 58, 72);
+  background-color: rgb(13, 27, 43);
   border: 0;
   padding: 5px;
   color: white;

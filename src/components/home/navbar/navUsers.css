@@ -16,13 +16,13 @@
   display: flex;
   gap: 10px;
   text-align: center;
-  background-color: rgb(44, 71, 103);
+  background-color: rgb(49, 61, 106);
   height: 4rem;
   padding-left: 15px;
 }
 .exit-nav button {
   height: 100%;
-  background-color: rgb(44, 71, 103);
+  background-color: rgb(49, 61, 106);
   border: 0;
   color: rgb(255, 255, 255);
 }

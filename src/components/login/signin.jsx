@@ -11,6 +11,8 @@ export default function SignIn() {
 
   const [error, setError] = useState(false);
 
+  const [loading ,setLoading] = useState(false)
+
   const navigate = useNavigate();
 
   const [dataForm, setDataForm] = useState({
@@ -48,6 +50,8 @@ navigate('/webchat/signup')
 
       return
     }
+
+setLoading(true)
 
   try {
 
@@ -105,6 +109,7 @@ navigate('/webchat/signup')
               <h3>ERRO: EMAIL OU SENHA INCORRETOS.</h3>
             </div>
           )}
+          {loading && (<div className="load"><div class="custom-loader"></div></div>)}
           <div className="button-go">
             <button onClick={LoginUser}>FAZER LOGIN</button>
             <button onClick={SignUp}>AINDA NÃO TEM CONTA?</button>

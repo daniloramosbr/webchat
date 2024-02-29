@@ -12,7 +12,7 @@
   margin-left: 10px;
 }
 .cont-header {
-  background-color: rgb(44, 71, 103);
+  background-color: rgb(49, 61, 106);
   display: flex;
   justify-content: space-between;
   padding: 10px 30px 10px 30px;
@@ -54,9 +54,10 @@
   display: flex;
   gap: 13px;
   cursor: pointer;
-  border-bottom: 2px solid rgb(56, 71, 88);
+  border-bottom: 2px solid rgb(43, 53, 92);
+  border-top: 2px solid rgb(43, 53, 92);
   display: flex;
-  padding: 5px;
+  padding: 10px;
   border-radius: 4px;
 }
 .icon-profile {
@@ -67,7 +68,7 @@
   margin-top: 80px;
 }
 .butt-msg {
-  background-color: rgb(44, 71, 103);
+  background-color: rgb(49, 61, 106);
   color: rgb(255, 255, 255);
   border: 0;
 }
@@ -102,7 +103,7 @@
   }
 }
 .inc-msg {
-  background-color: rgb(43, 68, 98);
+  background-color: rgb(49, 61, 106);
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -136,14 +137,11 @@
   width: 30%;
 }
 .user {
-  background-color: rgb(43, 68, 98);
+  background-color: rgba(58, 87, 190, 0.329);
 }
 @media (max-width: 600px) {
-
   .chat-ofc {
-
     display: none;
-    
   }
   .cont-header {
     width: 100%;
@@ -151,5 +149,10 @@
   .profile-chat {
     width: 100%;
   }
-
+}
+.ionn,
+.msg-read {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
