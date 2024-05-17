@@ -5,7 +5,7 @@ class Api {
 
    try {
 
-    return await axios.post("https://apichat-ws96.onrender.com/login", {
+    return await axios.post("https://apichat-tau.vercel.app/login", {
       username: user,
       email: email,
       password: password,
@@ -21,7 +21,7 @@ class Api {
 
    try {
 
-    return await axios.post("https://apichat-ws96.onrender.com/validlogin", {
+    return await axios.post("https://apichat-tau.vercel.app/validlogin", {
       email: email,
       password: password,
     });
@@ -35,7 +35,7 @@ class Api {
 
    try {
 
-    return await axios.post("https://apichat-ws96.onrender.com/newmessage", {
+    return await axios.post("https://apichat-tau.vercel.app/newmessage", {
 
       user: user,
       from: from,
@@ -55,7 +55,7 @@ class Api {
 
    try {
 
-    return await axios.post("https://apichat-ws96.onrender.com/message", {
+    return await axios.post("https://apichat-tau.vercel.app/message", {
 
     user: user,
     from: from
@@ -72,7 +72,7 @@ class Api {
 
     try {
 
-      return await axios.get(`https://apichat-ws96.onrender.com/message/${user}`)
+      return await axios.get(`https://apichat-tau.vercel.app/message/${user}`)
       
     } catch (error) {
 
@@ -85,7 +85,7 @@ class Api {
   async GetUsers (id) {
 
     try {
-      return await axios.get(`https://apichat-ws96.onrender.com/users/${id}`)
+      return await axios.get(`https://apichat-tau.vercel.app/users/${id}`)
       
     } catch (error) {
       return error.message
@@ -97,7 +97,7 @@ class Api {
 
     try {
 
-      return await axios.post("https://apichat-ws96.onrender.com/messagedelete", {
+      return await axios.post("https://apichat-tau.vercel.app/messagedelete", {
         userid: user,
         fromid: from
       }) 
