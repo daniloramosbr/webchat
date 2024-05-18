@@ -8,15 +8,17 @@
   padding: 10px;
 }
 .login-main {
+  width: 100%;
   display: flex;
   flex-direction: column;
   text-align: center;
   justify-content: center;
-  width: 500px;
+  max-width: 500px;
   gap: 20px;
-  background-color: rgb(49, 61, 106);
-  border-radius: 5px;
+  background-color: rgb(0, 6, 70);
+  border-radius: 8px;
   padding: 10px;
+  border: 1.5px solid rgba(0, 117, 212, 0.548);
 }
 .login-main div h1 {
   font-size: 28px;
@@ -42,11 +44,13 @@ form div input {
   height: 33px;
   border: 0;
   border-radius: 4px;
+  background-color: #103787;
+  border: 1.5px solid rgb(0, 117, 212);
+  color: #fff;
 }
 .button-go button:hover {
-  background-color: rgb(38, 67, 110);
-  border: 1px solid rgb(250, 250, 250);
-  color: aliceblue;
+  background-color: #001c54;
+  transform: scale(1.03);
 }
 .msg-error {
   color: red;

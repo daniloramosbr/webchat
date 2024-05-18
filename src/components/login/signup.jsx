@@ -74,21 +74,21 @@ navigate('/webchat/signin')
           <form onSubmit={HandleChange}>
             <div>
               <input
-                name="username"
+                name="username" type="text"
                 placeholder="Usuário:"
                 onChange={HandleChange}
               />
             </div>
             <div>
               <input
-                name="email"
+                name="email" type="email"
                 placeholder="Email:"
                 onChange={HandleChange}
               />
             </div>
             <div>
               <input
-                name="password"
+                name="password"  type="password"
                 placeholder="Senha:"
                 onChange={HandleChange}
               />

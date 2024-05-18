@@ -93,7 +93,7 @@ setLoading(true)
             </div>
             <div>
               <input
-                name="password"
+                name="password" type="password"
                 placeholder="Senha:"
                 onChange={HandleChange}
               />
