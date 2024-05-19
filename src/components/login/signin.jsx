@@ -65,7 +65,7 @@ setLoading(true)
     
   } catch (error) {
     setMsglogin(true)
-
+    setLoading(false)
     setTimeout(()=> {
 
       setMsglogin(false)
