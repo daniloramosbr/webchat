@@ -1,4 +1,4 @@
-import "./start.css";
+import "./start.scss";
 import { useNavigate } from "react-router-dom";
 
 export default function Start() {

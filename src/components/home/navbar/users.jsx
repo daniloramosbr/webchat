@@ -1,8 +1,9 @@
-import "./navUsers.css";
+import "./navUsers.scss";
 import { useContext } from "react";
 import { ContextJsx } from "../../../context/context";
 
 export default function Users({ user, id }) {
+  
   const { setUser, setId, setChat, setWidth } = useContext(ContextJsx);
 
   const ClassUser = user == "Danilo Ramos" ? "creator" : "user";

@@ -1,3 +1,5 @@
+$primary:  rgb(0, 6, 70);
+
 .container-chat {
   display: flex;
   width: 100%;
@@ -7,12 +9,16 @@
   display: flex;
   align-items: center;
   gap: 10px;
-}
-.profile span {
-  margin-left: 10px;
+  span {
+    margin-left: 10px;
+  }
+  div {
+    background-color: rgb(122, 122, 122);
+    border-radius: 10%;
+  }
 }
 .cont-header {
-  background-color: rgb(0, 6, 70);
+  background-color: $primary;
   display: flex;
   justify-content: space-between;
   padding: 10px 30px 10px 30px;
@@ -23,26 +29,24 @@
 .profile-chat {
   width: 30%;
 }
-.profile div {
-  background-color: rgb(122, 122, 122);
-  border-radius: 10%;
-}
+
 .button-chat {
   display: flex;
   align-items: center;
   width: 50px;
+  ion-icon {
+    font-size: 30px;
+  }
+  button {
+    border: 0;
+    border-radius: 10px;
+  }
 }
-.button-chat ion-icon {
-  font-size: 30px;
-}
-.button-chat button {
-  border: 0;
-  border-radius: 10px;
-}
+
 .chat-ofc {
   width: 70%;
   height: 100vh;
-  background-color: rgb(0, 6, 70);
+  background-color: $primary;
   position: fixed;
   right: 0px;
   border-left: 1px solid rgb(185, 185, 185);
@@ -69,7 +73,7 @@
   margin-top: 80px;
 }
 .butt-msg {
-  background-color: rgb(0, 6, 70);
+  background-color: $primary;
   color: rgb(255, 255, 255);
   border: 0;
 }
@@ -81,14 +85,14 @@
   align-items: center;
   justify-content: center;
   gap: 10px;
-}
-.msg button {
-  border: 0;
-  background-color: rgb(29, 175, 139);
-  color: aliceblue;
-  height: 2rem;
-  border-radius: 4px;
-  padding: 2px;
+  button {
+    border: 0;
+    background-color: rgb(29, 175, 139);
+    color: aliceblue;
+    height: 2rem;
+    border-radius: 4px;
+    padding: 2px;
+  }
 }
 .custom-loader {
   width: 50px;
@@ -104,7 +108,7 @@
   }
 }
 .inc-msg {
-  background-color: rgb(0, 6, 70);
+  background-color: $primary;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -116,9 +120,9 @@
   margin-right: 10px;
   display: flex;
   justify-content: end;
-}
-.read ion-icon {
-  font-size: 25px;
+  ion-icon {
+    font-size: 25px;
+  }
 }
 .cont-profile {
   display: flex;
@@ -138,7 +142,7 @@
   width: 30%;
 }
 .user {
-  background-color: rgba(28, 51, 133, 0.329);
+  background-color: rgba(15, 38, 124, 0.678);
 }
 @media (max-width: 600px) {
   .chat-ofc {

@@ -1,11 +1,9 @@
-import "./chatone.css";
+import "./chat.scss";
 import Cookies from "js-cookie";
 import { jwtDecode } from "jwt-decode";
-import { useState } from "react";
 
 export default function ChatOne({ msg, date, id }) {
   const decode = jwtDecode(Cookies.get("token"));
-  const [read, setRead] = useState(false);
 
   const data = date.split(" ");
 

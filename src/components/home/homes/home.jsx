@@ -1,7 +1,7 @@
 import Homeone from "./homeone";
 import Cookies from "js-cookie";
 import Chat from "../chat/chat";
-import "./home.css";
+import "./home.scss";
 import { useEffect, useState } from "react";
 import { jwtDecode } from "jwt-decode";
 import Api from "../../../controllers/Api";
@@ -88,16 +88,15 @@ export default function Home() {
 
         <NavUsers/>
         
-          {loading ? (
+          {loading && (
             <div className="msg">
               <div class="custom-loader"></div>
             </div>
-          ) : (
-            ""
-          )}
+          ) 
+}
 
           {data.length > 0
-            ? data.map((res) => {
+            && data.map((res) => {
                 return (
                   <Homeone
                     key={res.msg._id}
@@ -108,8 +107,7 @@ export default function Home() {
                   
                   />
                 );
-              })
-            : ""}
+              })}
           {empty && (
             <div className="msg">
                <div><ion-icon name="sad"></ion-icon></div>

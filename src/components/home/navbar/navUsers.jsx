@@ -1,4 +1,4 @@
-import "./navUsers.css";
+import "./navUsers.scss";
 import { useContext, useEffect, useState } from "react";
 import { ContextJsx } from "../../../context/context";
 import Api from "../../../controllers/Api";

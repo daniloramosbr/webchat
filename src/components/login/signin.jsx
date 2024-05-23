@@ -1,4 +1,4 @@
-import "./login.css";
+import "./login.scss";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import Api from "../../controllers/Api";
@@ -19,8 +19,6 @@ export default function SignIn() {
     email: "",
     password: "",
   });
-
-
   const HandleChange = (event) => {
     setDataForm((dataForm) => ({
       ...dataForm,
@@ -33,8 +31,6 @@ export default function SignIn() {
 navigate('/webchat/signup')
 
 }
-
-
 
   async function LoginUser () {
 
@@ -83,15 +79,15 @@ setLoading(true)
           <div>
             <h1>FAÇA SEU LOGIN:</h1>
           </div>
-          <form onSubmit={HandleChange}>
-            <div>
+          <form onSubmit={HandleChange} className="form-input">
+            <div> <ion-icon name="mail-outline"></ion-icon>
               <input
                 name="email"
                 placeholder="Email:"
                 onChange={HandleChange}
               />
             </div>
-            <div>
+            <div> <ion-icon name="lock-closed-outline"></ion-icon>
               <input
                 name="password" type="password"
                 placeholder="Senha:"

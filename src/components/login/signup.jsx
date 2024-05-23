@@ -1,4 +1,4 @@
-import "./login.css";
+import "./login.scss";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import Api from "../../controllers/Api";
@@ -68,25 +68,25 @@ navigate('/webchat/signin')
     <div className="container">
       <div className="login-container">
         <main className="login-main">
-          <div>
+        
             <h1>CRIE SUA CONTA:</h1>
-          </div>
-          <form onSubmit={HandleChange}>
-            <div>
-              <input
+         
+          <form onSubmit={HandleChange} className="form-input">
+            <div> <ion-icon name="person-outline"></ion-icon>
+              <input 
                 name="username" type="text"
                 placeholder="Usuário:"
                 onChange={HandleChange}
               />
             </div>
-            <div>
+            <div> <ion-icon name="mail-outline"></ion-icon>
               <input
                 name="email" type="email"
                 placeholder="Email:"
                 onChange={HandleChange}
               />
             </div>
-            <div>
+            <div> <ion-icon name="lock-closed-outline"></ion-icon>
               <input
                 name="password"  type="password"
                 placeholder="Senha:"

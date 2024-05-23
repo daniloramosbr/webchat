@@ -19,9 +19,10 @@
   border-radius: 8px;
   padding: 10px;
   border: 1.5px solid rgba(0, 117, 212, 0.548);
-}
-.login-main div h1 {
-  font-size: 28px;
+   h1 {
+    font-size: 27px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
 }
 form div input {
   width: 90%;
@@ -38,24 +39,33 @@ form div input {
   gap: 10px;
   flex-direction: column;
   align-items: center;
-}
-.button-go button {
-  width: 90%;
-  height: 33px;
-  border: 0;
-  border-radius: 4px;
-  background-color: #103787;
-  border: 1.5px solid rgb(0, 117, 212);
-  color: #fff;
-}
-.button-go button:hover {
-  background-color: #001c54;
-  transform: scale(1.03);
+  button {
+    width: 90%;
+    height: 33px;
+    border: 0;
+    border-radius: 4px;
+    background-color: #103787;
+    border: 1.5px solid rgb(0, 117, 212);
+    color: #fff;
+  }
+  button:hover {
+    background-color: #001c54;
+    transform: scale(1.03);
+  }
 }
 .msg-error {
-  color: red;
+  color: rgb(248, 0, 0);
 }
 .load {
   display: flex;
   justify-content: center;
+}
+.form-input div {
+display: flex;
+gap: 5px;
+justify-content: center;
+align-items: center;
+ion-icon {
+  font-size: 25px;
+}
 }

@@ -1,6 +1,6 @@
-import "./home.css";
+import "./home.scss";
 import { ContextJsx } from "../../../context/context";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import Cookies from "js-cookie";
 import { jwtDecode } from "jwt-decode";
 
@@ -10,14 +10,14 @@ export default function Homeone({ username, msg, id, lastmsg }) {
   const { setId, setUser, setChat, user } = useContext(ContextJsx);
 
   async function InfoChat() {
-    setUser(username);
+    setUser(username);      
     setId(id);
     setChat(true);
   }
 
   const messageClass = lastmsg === decode.id ? "send" : "received";
 
-  const ChatUser = username === user ? 'user' : 'no'
+  const ChatUser = username === user ? 'user' : 'no'       //verifica se username eh igualsó o que clica fica user
 
   return (
     <main className={`info-chat ${ChatUser}`} onClick={InfoChat}>

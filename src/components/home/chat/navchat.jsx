@@ -1,4 +1,4 @@
-import './chat.css'
+import './chat.scss'
 import { useContext, useState } from "react";
 import { ContextJsx } from "../../../context/context";
 import Api from '../../../controllers/Api';

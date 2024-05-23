@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import "./chat.css";
+import "./chat.scss";
 import Api from "../../../controllers/Api";
-import ChatOne from "./OneChat/chatone";
+import ChatOne from "./chatone";
 import Cookies from "js-cookie";
 import { jwtDecode } from "jwt-decode";
 import { useContext } from "react";
@@ -92,9 +92,9 @@ export default function Chat() {
       <div className="msg-chat">
       <Navchat/>
 
-        {allmsg.length > 0 ? allmsg.map((res) => {
+        {allmsg.length > 0 && allmsg.map((res) => {
           return <ChatOne key={res._id} msg={res.message} id={res.user} date={res.date}/>;
-        }) : ''} 
+        })} 
       </div>
 
       <div className="send-chat">
