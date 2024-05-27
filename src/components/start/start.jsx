@@ -8,26 +8,18 @@ export default function Start() {
     navigate("/webchat/signup");
   }
 
-  function GoSignIn() {
-    navigate("/webchat/signin");
-  }
-
   return (
     <div className="start-container">
-      <main className="start-main">
-        <div className="header">
-          <h2>WEBCHAT</h2>
-          <ion-icon name="chatbubble-ellipses"></ion-icon>
+       <div className="header">
+          <h1>WEBCHAT</h1>
+          <span>Webchat que possui um sistema de login e autenticação para segurança dos usuários. Após o login, os usuários podem enviar mensagens de texto, ver outros usúarios que se inscreveram, e outras funcionalidades que um chat possui.</span>
+          <div className="button-cont">
+          <button onClick={GoSignUp}>INICIAR</button>
+       </div>
         </div>
-        <div className="button-cont">
-          <div>
-            <button onClick={GoSignUp}>CRIAR NOVA CONTA</button>
-          </div>
-          <div>
-            <button onClick={GoSignIn}>FAZER LOGIN</button>
-          </div>
-        </div>
-      </main>
+      <div className="start-img">
+       <img src="logo.png" alt="webchatlogo" />
+      </div>
     </div>
   );
 }
