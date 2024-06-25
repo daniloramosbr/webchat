@@ -19,7 +19,7 @@ export default function SignIn() {
     email: "",
     password: "",
   });
-  const HandleChange = (event) => {
+  const HandleChange = (event: any) => {
     setDataForm((dataForm) => ({
       ...dataForm,
       [event.target.name]: event.target.value,
@@ -51,11 +51,11 @@ setLoading(true)
 
   try {
 
-    const res = await Api.ValidDados(dataForm.email, dataForm.password)
+    const res: any = await Api.ValidDados(dataForm.email, dataForm.password)
 
     Cookies.set('token', res.data)
 
-    const decode = jwtDecode(res.data);
+    const decode: any = jwtDecode(res.data);
 
    navigate(`/webchat/${decode.user}`)
     
@@ -105,7 +105,7 @@ setLoading(true)
               <h3>ERRO: EMAIL OU SENHA INCORRETOS.</h3>
             </div>
           )}
-          {loading && (<div className="load"><div class="custom-loader"></div></div>)}
+          {loading && (<div className="load"><div className="custom-loader"></div></div>)}
           <div className="button-go">
             <button onClick={LoginUser}>FAZER LOGIN</button>
             <button onClick={SignUp}>AINDA NÃO TEM CONTA?</button>

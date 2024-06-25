@@ -18,7 +18,7 @@ export default function SignUp() {
     password: "",
   });
 
-  const HandleChange = (event) => {
+  const HandleChange = (event: any) => {
     setDataForm((dataForm) => ({
       ...dataForm,
       [event.target.name]: event.target.value,
@@ -42,7 +42,7 @@ export default function SignUp() {
     setLoading(true)
 
     try {
-      const res = await Api.PostDados(
+      const res: any = await Api.PostDados(
         dataForm.username,
         dataForm.email,
         dataForm.password
@@ -50,7 +50,7 @@ export default function SignUp() {
 
       Cookies.set("token", res.data);
 
-      const decode = jwtDecode(res.data);
+      const decode: any = jwtDecode(res.data);
 
       navigate(`/webchat/${decode.user}`);
     } catch (error) {
@@ -101,7 +101,7 @@ navigate('/webchat/signin')
             </div>
           )}
 
-          {loading && (<div className="load"><div class="custom-loader"></div></div>)}
+          {loading && (<div className="load"><div className="custom-loader"></div></div>)}
 
           <div className="button-go">
             <button onClick={CreateUser}>CRIAR CONTA</button>

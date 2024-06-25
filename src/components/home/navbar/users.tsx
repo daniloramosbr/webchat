@@ -2,7 +2,12 @@ import "./navUsers.scss";
 import { useContext } from "react";
 import { ContextJsx } from "../../../context/context";
 
-export default function Users({ user, id }) {
+interface DataItem {
+  user: string;
+  id: string;
+}
+
+export default function Users({ user, id }: DataItem) {
   
   const { setUser, setId, setChat, setWidth } = useContext(ContextJsx);
 

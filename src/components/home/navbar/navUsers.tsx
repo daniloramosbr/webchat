@@ -6,9 +6,20 @@ import Cookies from "js-cookie";
 import { jwtDecode } from "jwt-decode";
 import Users from "./users";
 
+interface DataItem { 
+
+  _id: string; 
+  message: string; 
+  user: string; 
+  date : string; 
+} 
+
 export default function NavUsers() {
-  const decode = jwtDecode(Cookies.get("token"));
-  const [data, setData] = useState({})
+    
+  const token: any = Cookies.get("token")
+  const decode: any = jwtDecode(token);
+
+  const [data, setData] = useState<DataItem[]>([]); 
   const { width, setWidth } = useContext(ContextJsx);
 
   useEffect(()=> {
@@ -17,7 +28,7 @@ export default function NavUsers() {
 
     try {
 
-      const res = await Api.GetUsers(decode.id)
+      const res: any = await Api.GetUsers(decode.id)
       setData(res.data)
             
     } catch (error) {
@@ -51,7 +62,7 @@ export default function NavUsers() {
 
       <div className="users">
 
-        {data.length >= 1 && data.map((res)=>{
+        {data.length >= 1 && data.map((res: any)=>{
 
           return (
             <Users key={res._id} user={res.username} id={res._id}/>

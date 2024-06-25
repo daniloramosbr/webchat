@@ -8,22 +8,40 @@ import { useContext } from "react";
 import { ContextJsx } from "../../../context/context";
 import Navchat from "./navchat";
 
+declare global {
+  namespace JSX {
+    interface IntrinsicElements {
+      "ion-icon": any;
+    }
+  }
+}
+
 export default function Chat() {
-  const decode = jwtDecode(Cookies.get("token"));
 
-  const myId = decode.id;
-
+  const token: any = Cookies.get("token")
+  const decode: any = jwtDecode(token)
+  const myId = decode.id
   const { user, id, msg, setMsg, setChatheigth, chatheigth } = useContext(ContextJsx);
 
-  const [allmsg, setAllmsg] = useState({});
+  interface DataItem { 
+    _id: string; 
+
+    message: string; 
+
+    user: string; 
+
+    date : string; 
+  } 
+
+  const [allmsg, setAllmsg] = useState<DataItem[]>([]); 
 
   useEffect(() => {
     async function getmsg() {
       try {
-        const res = await Api.GetMsgId(myId, id);
+        const res: any = await Api.GetMsgId(myId, id);
         setAllmsg(res.data);
       } catch (error) {
-        console.log(res);
+        console.log(error);
       }
     }
 
@@ -32,7 +50,7 @@ export default function Chat() {
 
   const [text, setText] = useState("");
 
-  const HandleChange = (event) => {
+  const HandleChange = (event :any) => {
     setText(event.target.value);
   }
 
@@ -44,7 +62,6 @@ export default function Chat() {
       }
     }
   }
-
   async function SendText() {
 
     if (!text) {
@@ -65,9 +82,7 @@ export default function Chat() {
     } catch (error) {
 
       console.log(error);
-
     }
-
   }
 
   return (
@@ -77,34 +92,26 @@ export default function Chat() {
           <div>
             <ion-icon name="person"></ion-icon>
           </div>
-
           <h3>{user}</h3>
         </div>
-
         <div onClick={(()=> {
          setChatheigth(chatheigth === '30%' ? '0%' : '30%')
         })}>
           <ion-icon name="ellipsis-vertical-circle-outline"></ion-icon>
         </div>
-      
       </div>
-
       <div className="msg-chat">
       <Navchat/>
-
         {allmsg.length > 0 && allmsg.map((res) => {
           return <ChatOne key={res._id} msg={res.message} id={res.user} date={res.date}/>;
         })} 
       </div>
-
       <div className="send-chat">
         <input
           type="text"
           placeholder="Digite uma mensagem"
           onChange={HandleChange}
-          value={text}
-        />
-
+          value={text} />
         <button onClick={SendText}>
           <ion-icon name="send-outline"></ion-icon>
         </button>

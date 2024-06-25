@@ -1,21 +1,32 @@
+import "./home.scss";
 import Homeone from "./homeone";
 import Cookies from "js-cookie";
 import Chat from "../chat/chat";
-import "./home.scss";
 import { useEffect, useState } from "react";
 import { jwtDecode } from "jwt-decode";
 import Api from "../../../controllers/Api";
 import { useContext } from "react";
 import { ContextJsx } from "../../../context/context";
 import { useNavigate } from "react-router-dom";
-import NavUsers from "../navbar/navusers";
+import NavUsers from "../navbar/navUsers";
+
+interface DataItem { 
+
+  _id: string; 
+  message: string; 
+  user: string; 
+  date : string; 
+} 
  
 export default function Home() {
-  const decode = jwtDecode(Cookies.get("token"));
+
+  const token: any = Cookies.get("token")
+  const decode: any = jwtDecode(token);
   const navigate = useNavigate()
 
-  const [data, setData] = useState({}); //mostra msgs
-  const [loading, setLoading] = useState(false); //mostra loading
+  const [data, setData] = useState<DataItem[]>([]); 
+
+  const [loading, setLoading] = useState(true); //mostra loading
   const [empty, setEmpty] = useState(false); //mostra se n tiver msgs
   const {chat, msg, setChat, setWidth, setUser} = useContext(ContextJsx)
   
@@ -24,7 +35,7 @@ export default function Home() {
       setLoading(true);
 
       try {
-        const res = await Api.GetAllMsg(decode.id);
+        const res: any = await Api.GetAllMsg(decode.id);
 
         setData(res.data);
 
@@ -67,7 +78,6 @@ export default function Home() {
             </div>
             <h3>{decode.user}</h3>
           </div>
-
         <div className="buttons">
 
         <button className="butt-msg" onClick={(()=>{
@@ -79,35 +89,28 @@ export default function Home() {
         <button className="butt-msg" onClick={LogOut}>
             <ion-icon name="log-out-outline"></ion-icon>
         </button>
-
         </div>
-        
         </div>
-
         <div className="homeone">
-
         <NavUsers/>
-        
-          {loading && (
+                {loading ? (
             <div className="msg">
-              <div class="custom-loader"></div>
+              <div className="custom-loader"></div>
             </div>
-          ) 
+          ) :  data.map((res: any) => {
+            return (
+              <Homeone
+                key={res.msg._id}
+                username={res.username}
+                msg={res.msg.message}
+                id={res.userid}
+                lastmsg={res.msg.user}
+              
+              />
+            );
+          })
+          
 }
-
-          {data.length > 0
-            && data.map((res) => {
-                return (
-                  <Homeone
-                    key={res.msg._id}
-                    username={res.username}
-                    msg={res.msg.message}
-                    id={res.userid}
-                    lastmsg={res.msg.user}
-                  
-                  />
-                );
-              })}
           {empty && (
             <div className="msg">
                <div><ion-icon name="sad"></ion-icon></div>

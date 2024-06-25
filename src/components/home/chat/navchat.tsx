@@ -7,7 +7,9 @@ import Cookies from 'js-cookie';
 
 export default function Navchat() {
 
-  const decode = jwtDecode(Cookies.get("token"));
+  const token: any = Cookies.get("token")
+
+  const decode: any = jwtDecode(token);
 
   const myId = decode.id
 
@@ -19,7 +21,7 @@ export default function Navchat() {
 
     try {
 
-     const res = await Api.DeleteMsgs(myId, id)
+     const res: any = await Api.DeleteMsgs(myId, id)
       setChat(false)
       setChatheigth('0%')
       setData(res.data)

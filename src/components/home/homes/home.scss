@@ -1,9 +1,10 @@
-$primary:  rgb(0, 6, 70);
+$primary:  rgb(0, 2, 139);
 
 .container-chat {
   display: flex;
   width: 100%;
   height: 100vh;
+  background-color: rgb(12, 12, 12);
 }
 .profile {
   display: flex;
@@ -21,7 +22,7 @@ $primary:  rgb(0, 6, 70);
   background-color: $primary;
   display: flex;
   justify-content: space-between;
-  padding: 10px 30px 10px 30px;
+  padding: 20px 30px 20px 30px;
   position: fixed;
   width: 30%;
   z-index: 9;
@@ -56,10 +57,10 @@ $primary:  rgb(0, 6, 70);
   margin-top: 5px;
   margin-bottom: 5px;
   display: flex;
-  gap: 13px;
+  gap: 15px;
   cursor: pointer;
-  border-bottom: 2px solid rgb(43, 53, 92);
-  border-top: 2px solid rgb(43, 53, 92);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.562);
+  border-top: 1px solid rgba(255, 255, 255, 0.562);
   display: flex;
   padding: 10px;
   border-radius: 4px;
@@ -70,7 +71,10 @@ $primary:  rgb(0, 6, 70);
   border-radius: 10%;
 }
 .homeone {
-  margin-top: 80px;
+  margin-top: 6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 .butt-msg {
   background-color: $primary;
@@ -87,7 +91,7 @@ $primary:  rgb(0, 6, 70);
   gap: 10px;
   button {
     border: 0;
-    background-color: rgb(29, 175, 139);
+    background-color: rgb(29, 31, 175);
     color: aliceblue;
     height: 2rem;
     border-radius: 4px;
